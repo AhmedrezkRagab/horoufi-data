@@ -61,7 +61,7 @@
 
 <header>
   <h1>سياسة الخصوصية — حروفي</h1>
-  <p>آخر تحديث: ٨ سبتمبر ٢٠٢٦</p>
+  <p>آخر تحديث: ١٠ سبتمبر ٢٠٢٦</p>
 </header>
 
 <div class="lede">
@@ -115,8 +115,7 @@
 <h3>أ. الإعلانات (Google AdMob)</h3>
 <p>
   التطبيق بيعرض إعلانات من <strong>Google AdMob</strong>. زي أي شبكة
-  إعلانات، بتستقبل بيانات تقنية عن الجهاز — أهمها
-  <strong>معرّف الإعلانات</strong> وعنوان الـIP ونوع الجهاز ونظام التشغيل
+  إعلانات، بتستقبل بيانات تقنية عن الجهاز — زي <strong>معرّفات الجهاز</strong> وعنوان الـIP ونوع الجهاز ونظام التشغيل
   والتفاعل مع الإعلان.
 </p>
 <div class="note">
@@ -195,12 +194,25 @@
 
 <h2>٦. الصلاحيات</h2>
 <p>
-  التطبيق بيطلب صلاحية واحدة بس: <code>INTERNET</code>، وهي
-  <strong>للإعلانات وتحديث المحتوى فقط</strong>. التعلّم كله — الحروف
-  والأصوات والتتبّع والتقدّم — شغّال <strong>من غير نت خالص</strong>.
+  دي كل الصلاحيات اللي التطبيق بيطلبها — اتقرت من ملف التطبيق المنشور
+  نفسه، مش من الكود:
+</p>
+<table>
+  <tr><th>الصلاحية</th><th>مين بيطلبها وليه</th></tr>
+  <tr><td><code>INTERNET</code></td><td>التطبيق نفسه — للإعلانات وتحديث محتوى الدروس</td></tr>
+  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>مكتبة الإعلانات من جوجل — بتعرف إذا كان فيه نت قبل ما تطلب إعلان</td></tr>
+  <tr><td><code>WAKE_LOCK</code></td><td>مكتبة قياس من جوجل بتيجي مع مكتبة الإعلانات</td></tr>
+  <tr><td><code>FOREGROUND_SERVICE</code></td><td>مكتبة جدولة المهام (WorkManager) اللي مكتبة الإعلانات بتعتمد عليها</td></tr>
+</table>
+<p>
+  <strong>شلنا عن قصد صلاحية معرّف الإعلانات</strong> (<code>AD_ID</code>)
+  وصلاحيات Privacy Sandbox الإعلانية اللي مكتبة الإعلانات بتضيفها
+  تلقائيًا — زي ما سياسة العائلات بتطلب في التطبيقات الموجّهة للأطفال.
 </p>
 <p>
-  مفيش صلاحية كاميرا ولا مايك ولا موقع ولا جهات اتصال ولا ملفات.
+  التعلّم كله — الحروف والأصوات والتتبّع والتقدّم — شغّال
+  <strong>من غير نت خالص</strong>. ومفيش صلاحية كاميرا ولا مايك ولا موقع
+  ولا جهات اتصال ولا ملفات.
 </p>
 
 <h2>٧. مدة الاحتفاظ بالبيانات</h2>
@@ -217,14 +229,14 @@
 </p>
 
 <footer>
-  حروفي — سياسة الخصوصية · آخر تحديث ٨ سبتمبر ٢٠٢٦
+  حروفي — سياسة الخصوصية · آخر تحديث ١٠ سبتمبر ٢٠٢٦
 </footer>
 
 <!-- ─────────────────────────  ENGLISH  ───────────────────────── -->
 <div class="en" lang="en">
 
 <h2>Privacy Policy — Horoufi (English)</h2>
-<p><em>Last updated: 8 September 2026</em></p>
+<p><em>Last updated: 10 September 2026</em></p>
 
 <p>
   <strong>Horoufi</strong> is an Arabic reading app for children. The app
@@ -256,7 +268,7 @@
 <h3>3. What actually leaves the device</h3>
 <p>
   <strong>a. Advertising (Google AdMob).</strong> AdMob receives technical
-  data including an advertising identifier, IP address, device type, OS and
+  data including device identifiers, IP address, device type, OS and
   ad interactions. Because this app is child-directed, we enforce child
   settings with no exceptions: <strong>non-personalised ads only</strong>,
   <strong>no remarketing or behavioural targeting</strong>, and a
@@ -293,9 +305,21 @@
 
 <h3>6. Permissions</h3>
 <p>
-  One permission only: <code>INTERNET</code>, used for ads and content
-  updates. All learning works fully offline. No camera, microphone,
-  location, contacts or file access.
+  These are all the permissions the app requests, read from the published
+  app package itself — not from source code:
+</p>
+<ul>
+  <li><code>INTERNET</code> — requested by the app, for ads and lesson content updates</li>
+  <li><code>ACCESS_NETWORK_STATE</code> — added by Google's ads library, to check connectivity before requesting an ad</li>
+  <li><code>WAKE_LOCK</code> — added by a Google measurement library bundled with the ads library</li>
+  <li><code>FOREGROUND_SERVICE</code> — added by the WorkManager scheduling library the ads library depends on</li>
+</ul>
+<p>
+  We <strong>deliberately removed the advertising ID permission</strong>
+  (<code>AD_ID</code>) and the Privacy Sandbox ad permissions that the ads
+  library adds automatically, as Google Play's Families policy requires for
+  apps directed to children. All learning works fully offline. No camera,
+  microphone, location, contacts or file access.
 </p>
 
 <h3>7. Retention</h3>
