@@ -61,7 +61,7 @@
 
 <header>
   <h1>سياسة الخصوصية — حروفي</h1>
-  <p>آخر تحديث: ١٠ سبتمبر ٢٠٢٦</p>
+  <p>آخر تحديث: ٧ أكتوبر ٢٠٢٦</p>
 </header>
 
 <div class="lede">
@@ -104,6 +104,9 @@
   <tr><td>الحروف اللي اتعلمها</td><td>قايمة أسماء حروف</td></tr>
   <tr><td>الأيام ورا بعض وآخر يوم لعب</td><td>عدّاد وتاريخ</td></tr>
   <tr><td>عدّادات الإعلانات</td><td>أرقام عشان نحدّد عدد الإعلانات في اليوم</td></tr>
+  <tr><td>«الإعلانات مشالة»</td><td>علامة نعم/لأ لو ولي الأمر اشترى «شيل الإعلانات»</td></tr>
+  <tr><td>إجابات كل يوم</td><td>عدد الإجابات الصح والكل في آخر ٣ أسابيع — عشان «النهارده ضد امبارح»</td></tr>
+  <tr><td>تسجيلات صوت الطفل وهو بيقرا</td><td>لو استخدم «اقرا بصوتك» في القصص: ملفات صوت في فولدر التطبيق الخاص، آخر تسجيل بس لكل صفحة. <strong>مبتتبعتش لأي حد ومبتترفعش على أي سيرفر</strong>، وولي الأمر بيسمعها ويمسحها من شاشة وليّ الأمر</td></tr>
 </table>
 <p>
   مسح التطبيق من الجهاز بيمسح ده كله. وكمان في زرار
@@ -150,6 +153,15 @@
   <li><a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener">سياسة jsDelivr</a></li>
 </ul>
 
+<h3>ج. «شيل الإعلانات» (Google Play)</h3>
+<p>
+  في شاشة وليّ الأمر — ورا بوابة وليّ الأمر — فيه شراء واحد اختياري بيشيل
+  الإعلانات. الدفع كله بيتم جوّه <strong>Google Play</strong>: إحنا
+  <strong>مبنشوفش أي بيانات دفع</strong> ولا اسم ولا إيميل، والتطبيق بيعرف
+  بس «اتشالت ولا لأ». جوجل بتحتفظ بسجل الشراء على حساب وليّ الأمر زي أي
+  شراء من المتجر.
+</p>
+
 <h2>٤. خصوصية الأطفال</h2>
 <p>
   التطبيق ده <strong>موجّه للأطفال</strong>، وبيتعامل تحت
@@ -161,7 +173,8 @@
       ولا من أي مستخدم أصلًا، لأن التطبيق ملوش حسابات</li>
   <li>مفيش أي وسيلة داخل التطبيق يكتب فيها الطفل اسمه أو أي معلومة عنه</li>
   <li>مفيش دردشة ولا مشاركة ولا روابط لمواقع تواصل</li>
-  <li>مفيش شراء داخل التطبيق</li>
+  <li>الشراء الوحيد («شيل الإعلانات») في شاشة وليّ الأمر بس، ورا بوابة
+      الطفل مبيعرفش يعدّيها، ومفيش أي شراء في شاشات الطفل</li>
   <li>كل شبكات الإعلانات المستخدمة معتمدة في قايمة
       <em>Families Self-Certified Ads SDKs</em> من جوجل</li>
 </ul>
@@ -203,6 +216,8 @@
   <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>مكتبة الإعلانات من جوجل — بتعرف إذا كان فيه نت قبل ما تطلب إعلان</td></tr>
   <tr><td><code>WAKE_LOCK</code></td><td>مكتبة قياس من جوجل بتيجي مع مكتبة الإعلانات</td></tr>
   <tr><td><code>FOREGROUND_SERVICE</code></td><td>مكتبة جدولة المهام (WorkManager) اللي مكتبة الإعلانات بتعتمد عليها</td></tr>
+  <tr><td><code>RECORD_AUDIO</code></td><td>التطبيق نفسه — لـ«اقرا بصوتك»: الطفل بيسجّل نفسه وهو بيقرا القصص ويسمع صوته. الموبايل بيسأل قبل أول تسجيل، والميكروفون مبيشتغلش غير لما الطفل يدوس زرار التسجيل، والتسجيل <strong>مبيخرجش من الجهاز</strong></td></tr>
+  <tr><td><code>com.android.vending.BILLING</code></td><td>مكتبة الدفع من Google Play — لـ«شيل الإعلانات» في شاشة وليّ الأمر بس</td></tr>
 </table>
 <p>
   <strong>شلنا عن قصد صلاحية معرّف الإعلانات</strong> (<code>AD_ID</code>)
@@ -211,8 +226,8 @@
 </p>
 <p>
   التعلّم كله — الحروف والأصوات والتتبّع والتقدّم — شغّال
-  <strong>من غير نت خالص</strong>. ومفيش صلاحية كاميرا ولا مايك ولا موقع
-  ولا جهات اتصال ولا ملفات.
+  <strong>من غير نت خالص</strong>. ومفيش صلاحية كاميرا ولا موقع ولا جهات
+  اتصال ولا ملفات، والمايك للتسجيل اللي فوق بس.
 </p>
 
 <h2>٧. مدة الاحتفاظ بالبيانات</h2>
@@ -229,7 +244,7 @@
 </p>
 
 <footer>
-  حروفي — سياسة الخصوصية · آخر تحديث ١٠ سبتمبر ٢٠٢٦
+  حروفي — سياسة الخصوصية · آخر تحديث ٧ أكتوبر ٢٠٢٦
 </footer>
 
 <!-- ─────────────────────────  ENGLISH  ───────────────────────── -->
@@ -257,11 +272,15 @@
 <p>
   The app uploads nothing to any server of ours. We operate no server that
   receives user data. There is no login, no account, no name, birthdate,
-  email or phone number, no photos, audio, contacts or location, and no
+  email or phone number, no photos, contacts or location, and no
   leaderboard.
 </p>
 <p>Stored locally on the device only: star count, letters completed, day
-  streak and last-played date, and ad-frequency counters. Uninstalling the
+  streak and last-played date, ad-frequency counters, daily answer counts
+  for the last 3 weeks, and — if the child uses “Read aloud” in the stories —
+  recordings of the child reading (the latest per page). <strong>Recordings
+  never leave the device and are never uploaded</strong>; parents can play
+  and delete them in the Parent screen. Uninstalling the
   app erases all of it, as does the <strong>“Erase child's progress”</strong>
   button in the Parent screen.</p>
 
@@ -282,6 +301,14 @@
   — but, as with any internet request, those services see the device's
   <strong>IP address</strong>.
 </p>
+<p>
+  <strong>c. “Remove ads” (Google Play).</strong> The Parent screen — behind
+  the parental gate — offers one optional one-time purchase that removes
+  ads. Payment happens entirely inside Google Play: <strong>we never see
+  payment details</strong>, names or emails; the app only learns whether ads
+  were removed. Google keeps the purchase record on the parent's account like
+  any store purchase.
+</p>
 
 <h3>4. Children's privacy</h3>
 <p>
@@ -290,8 +317,9 @@
   and children's privacy laws such as COPPA. We do not knowingly collect
   personal information from children — or from anyone, since the app has no
   accounts. There is no field in which a child can enter any information
-  about themselves, no chat, no sharing, no social links, and no in-app
-  purchases. All ad SDKs used are on Google's
+  about themselves, no chat, no sharing, no social links, and no purchases
+  in the child's screens — the single optional purchase (“Remove ads”) is in
+  the Parent screen behind the parental gate. All ad SDKs used are on Google's
   <em>Families Self-Certified Ads SDKs</em> list.
 </p>
 
@@ -313,13 +341,16 @@
   <li><code>ACCESS_NETWORK_STATE</code> — added by Google's ads library, to check connectivity before requesting an ad</li>
   <li><code>WAKE_LOCK</code> — added by a Google measurement library bundled with the ads library</li>
   <li><code>FOREGROUND_SERVICE</code> — added by the WorkManager scheduling library the ads library depends on</li>
+  <li><code>RECORD_AUDIO</code> — requested by the app for “Read aloud”: the child records themselves reading a story and hears it back. The phone asks before the first recording, the microphone is only on while the child holds a recording, and recordings stay on the device</li>
+  <li><code>com.android.vending.BILLING</code> — added by Google Play's billing library, for “Remove ads” in the Parent screen only</li>
 </ul>
 <p>
   We <strong>deliberately removed the advertising ID permission</strong>
   (<code>AD_ID</code>) and the Privacy Sandbox ad permissions that the ads
   library adds automatically, as Google Play's Families policy requires for
   apps directed to children. All learning works fully offline. No camera,
-  microphone, location, contacts or file access.
+  location, contacts or file access; the microphone is used only for the
+  recording feature above.
 </p>
 
 <h3>7. Retention</h3>
